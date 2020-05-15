@@ -24,7 +24,7 @@
     
     @auth
     <li class="nav-item h6">
-      <a class="nav-link btn-sf-like mr10" href="{{ route('articles.create') }}">
+      <a class="nav-link btn-sf-like mr10" href="#">
         <i class="fas fa-pen mr-1"></i>
         投稿する
       </a>
@@ -33,7 +33,7 @@
     
     @auth
     <li class="nav-item h6">
-      <a class="nav-link btn-sf-like " href="{{ route('users.show', ['name' => Auth::user()->name]) }}">
+      <a class="nav-link btn-sf-like " href="#">
         <i class="fas fa-user-circle"></i>
         マイページ
       </a>
