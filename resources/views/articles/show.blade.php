@@ -2,7 +2,6 @@
 
 @section('content')
   <div class="container">
-    @foreach($articles as $article)
       <div class="card mt-3">
         <div class="card-body d-flex flex-row">
           <div>
@@ -72,6 +71,5 @@
           </div>
         </div>
       </div>
-    @endforeach
   </div>
 @endsection

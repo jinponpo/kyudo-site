@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container mb20">
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="card mt-3">
           <div class="card-body pt-0">
             <div class="card-text">
-              <form method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data">
+              <form method="POST" action="{{ route('articles.update', ['article' => $article]) }}">
+                @method('PATCH')
                 @csrf
                 <div class="md-form">
                   <label>タイトル</label>
@@ -17,7 +18,7 @@
                   <label></label>
                   <textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ $article->body ?? old('body') }}</textarea>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block" value="投稿">投稿する</button>
+                <button type="submit" class="btn blue-gradient btn-block">更新する</button>
               </form>
             </div>
           </div>
