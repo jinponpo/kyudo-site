@@ -24,7 +24,7 @@
     
     @auth
     <li class="nav-item h6">
-      <a class="nav-link btn-sf-like mr10" href="#">
+      <a class="nav-link btn-sf-like mr10" href="{{ route('articles.create') }}">
         <i class="fas fa-pen mr-1"></i>
         投稿する
       </a>
