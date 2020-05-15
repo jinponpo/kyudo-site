@@ -31,6 +31,8 @@
 <body>
     <div id="app">
         @include('nav')
+        
+        @include('flash_message')
 
         <main class="py-4">
             @yield('content')

@@ -32,7 +32,7 @@ class ArticleController extends Controller
         $article->fill($request->all());
         $article->user_id = $request->user()->id;
         $article->save();
-        return redirect()->route('articles.index');
+        return redirect('/')->with('flash_message', '投稿が完了しました');
     }
     
     public function edit(Article $article)
