@@ -33,7 +33,7 @@
     
     @auth
     <li class="nav-item h6">
-      <a class="nav-link btn-sf-like " href="#">
+      <a class="nav-link btn-sf-like" href='{{ route("users.show", ["name" => Auth::user()->name]) }}'>
         <i class="fas fa-user-circle"></i>
         マイページ
       </a>
