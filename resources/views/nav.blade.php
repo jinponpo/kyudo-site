@@ -3,12 +3,10 @@
     <img class='navbar-logo' src="{{ asset('images/logo.png') }}">
     {{ config('app.name', 'JINTODO') }}
   </a>
-  
   <form method="GET" action="/">
     <input type="text" name="keyword">
     <input type="submit" value="本文検索">
   </form>
-                
   <ul class="navbar-nav m-auto">
     @guest
     <li class="nav-item h6">

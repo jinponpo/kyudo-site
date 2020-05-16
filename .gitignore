@@ -1,11 +1,11 @@
 /node_modules
+/views/articles/show.blade.php
 /public/css
 /public/hot
 /public/js
 /public/images
 /public/mix-mmanifest.json
 /public/storage
-/database/seeds
 /storage/*.key
 /vendor
 .env
