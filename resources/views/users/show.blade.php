@@ -6,7 +6,7 @@
       <div class="card-body">
         <h2 class="h5 card-title m-0">
           <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
-            {{ $user->name }}
+            ユーザー名:{{ $user->name }}
           </a>
         </h2>
       </div>
