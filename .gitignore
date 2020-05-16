@@ -5,6 +5,7 @@
 /public/images
 /public/mix-mmanifest.json
 /public/storage
+/database/seeds
 /storage/*.key
 /vendor
 .env
