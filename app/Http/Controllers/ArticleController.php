@@ -15,9 +15,15 @@ class ArticleController extends Controller
         $this->authorizeResource(Article::class, 'article');
     }
     
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Article::where('status', 1)->orderBy('created_at', 'DESC')->paginate(5);
+        
+        if($request->has('keyword')) {
+            $articles = Article::where('body', 'like', '%'.$request->get('keyword').'%')->paginate(5);
+        }
+        else{
+            $articles = Article::where('status', 1)->orderBy('created_at', 'DESC')->paginate(5);
+        }
 
         return view('articles/index', ['articles' => $articles]);
     }
