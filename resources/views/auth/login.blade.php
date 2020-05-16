@@ -23,7 +23,7 @@
                   <input class="form-control" type="password" id="password" name="password" required>
                 </div>
                 <input type="hidden" name="remember" id="remember" value="on">
-                <button class="btn btn-primary mt-2 mb-2" type="submit">ログイン</button>
+                <button class="btn btn-block btn-primary mt-2 mb-2" type="submit">ログイン</button>
               </form>
               <div class="mt-0">
                 <a href="{{ route('register') }}" class="card-text">ユーザー登録はこちら</a>
