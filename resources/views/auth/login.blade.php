@@ -11,6 +11,12 @@
               <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger">
                 <i class="fab fa-google mr-1"></i>Googleでログイン
               </a>
+              <a href="{{ route('login.{provider}', ['provider' => 'facebook']) }}" class="btn btn-block btn-primary mt10">
+                <i class="fab fa-facebook mr-1"></i>Facebookでログイン
+              </a>
+              <a href="{{ route('login.{provider}', ['provider' => 'twitter']) }}" class="btn btn-block btn-info mt10">
+                <i class="fab fa-twitter mr-1"></i>Twitterでログイン
+              </a>
             <div class="card-text">
               <form method="POST" action="{{ route('login') }}">
                 @csrf

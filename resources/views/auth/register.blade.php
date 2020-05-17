@@ -10,6 +10,12 @@
               <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger">
                 <i class="fab fa-google mr-1"></i>Googleで登録
               </a>
+              <a href="{{ route('login.{provider}', ['provider' => 'facebook']) }}" class="btn btn-block btn-primary mt10">
+                <i class="fab fa-facebook mr-1"></i>Facebookで登録
+              </a>
+              <a href="{{ route('login.{provider}', ['provider' => 'twitter']) }}" class="btn btn-block btn-info mt10">
+                <i class="fab fa-twitter mr-1"></i>Twitterで登録
+              </a>
             @include('error_card_list')
             <div class="card-text">
               <form method="POST" action="{{ route('register') }}">

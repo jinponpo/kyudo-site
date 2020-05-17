@@ -15,12 +15,12 @@ class ArticleTableSeeder extends Seeder
         $faker = Faker\Factory::create('ja_JP');
 
         // ランダムに記事を作成
-        for ($i = 0; $i < 20; $i++)
+        for ($i = 0; $i < 10; $i++)
         {
             DB::table('articles')->insert([
-                'title' => $faker->text(10),
-                'body' => $faker->realtext(20),
-                'user_id' => $faker->numberBetween(1, 20),
+                'title' => '私の出身地',
+                'body' => $faker->country,
+                'user_id' => $faker->numberBetween(1, 10),
                 'created_at' => $faker->dateTimeThisMonth(),
             ]);
         }

@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\Request;
-use Laravel\Socialite\Facades\Socialite;
 
 class RegisterController extends Controller
 {
@@ -75,8 +75,12 @@ class RegisterController extends Controller
     public function showProviderUserRegistrationForm(Request $request, string $provider)
     {
         $token = $request->token;
- 
-        $providerUser = Socialite::driver($provider)->userFromToken($token);
+        
+        if($provider === 'twitter') {
+            $providerUser = Socialite::driver($provider)->userFromTokenAndSecret(env('TWITTER_ACCESS_TOKEN'), env('TWITTER_ACCESS_TOKEN_SECRET'));
+        } else {
+            $providerUser = Socialite::driver($provider)->userFromToken($token);
+        }
  
         return view('auth.social_register', [
             'provider' => $provider,
@@ -94,7 +98,11 @@ class RegisterController extends Controller
         
         $token = $request->token;
         
-        $providerUser = Socialite::driver($provider)->userFromToken($token);
+        if($provider === 'twitter') {
+            $providerUser = Socialite::driver($provider)->userFromTokenAndSecret(env('TWITTER_ACCESS_TOKEN'), env('TWITTER_ACCESS_TOKEN_SECRET'));
+        } else {
+            $providerUser = Socialite::driver($provider)->userFromToken($token);
+        }
 
         $user = User::create([
             'name' => $request->name,
