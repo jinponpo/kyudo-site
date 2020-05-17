@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand bg-light fixed-top" style="opacity: 0.8;">
+<nav class="navbar navbar-expand bg-light" style="opacity: 0.8;">
   <a class="navbar-brand ml-auto h6 text-dark btn-border-bottom" href="{{ url('/') }}">
     <img class='navbar-logo' src="{{ asset('images/logo.png') }}">
     {{ config('app.name', 'JINTODO') }}
