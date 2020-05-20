@@ -28,6 +28,17 @@ class LoginController extends Controller
      *
      * @var string
      */
+     public function authenticate()
+    {
+        $email = 'guest@guest.com';
+        $password = 'guestpass';
+
+        if (\Auth::attempt(['email' => $email, 'password' => $password])) {
+            return redirect('/');
+        }
+        return back();
+    }
+     
     protected $redirectTo = '/';
 
     /**
