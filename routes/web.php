@@ -27,3 +27,5 @@ Route::resource('/articles', 'ArticleController')->only(['show']);
 Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{name}', 'UserController@show')->name('show');
 });
+Route::get('/articles/{article_id}/likes', 'LikesController@store');
+Route::get('/likes/{like_id}', 'LikesController@destroy');

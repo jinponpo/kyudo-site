@@ -15,4 +15,14 @@ class Article extends Model
     {
         return $this->belongsTo('App\User');
     }
+    
+    public function likes(): HasMany
+    {
+        return $this->hasMany('App\Like');
+    }
+    
+    Public function likedBy($user)
+    {
+        return Like::where('user_id', $user->id)->where('article_id', $this->id);
+    }
 }

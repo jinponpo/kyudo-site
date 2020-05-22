@@ -47,8 +47,13 @@ class User extends Authenticatable
         $this->notify(new PasswordResetNotification($token, new BareMail()));
     }
     
-        public function articles(): HasMany
+    public function articles(): HasMany
     {
         return $this->hasMany('App\Article');
+    }
+    
+    public function likes(): HasMany
+    {
+        return $this->hasMany('App\Like');
     }
 }
