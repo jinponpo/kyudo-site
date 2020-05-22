@@ -23,6 +23,6 @@ class Article extends Model
     
     Public function likedBy($user)
     {
-        return Like::where('user_id', $user->id)->where('article_id', $this->id);
+        return Like::where('article_id', $this->id);
     }
 }
