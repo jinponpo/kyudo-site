@@ -4,25 +4,34 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Article extends Model
 {
     protected $fillable = [
-        'title', 'body',
+        'title',
+        'body',
     ];
-    
+
     public function user(): BelongsTo
     {
         return $this->belongsTo('App\User');
     }
-    
-    public function likes(): HasMany
+
+    public function likes(): BelongsToMany
     {
-        return $this->hasMany('App\Like');
+        return $this->belongsToMany('App\User', 'likes')->withTimestamps();
     }
-    
-    Public function likedBy($user)
+
+    public function isLikedBy(?User $user): bool
     {
-        return Like::where('article_id', $this->id);
+        return $user
+            ? (bool)$this->likes->where('id', $user->id)->count()
+            : false;
+    }
+
+    public function getCountLikesAttribute(): int
+    {
+        return $this->likes->count();
     }
 }

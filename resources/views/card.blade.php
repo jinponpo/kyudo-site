@@ -67,14 +67,17 @@
     <div class="card-text">
       {!! nl2br(e( $article->body )) !!}
     </div>
-    <div class="card-body">
-      <div class="row">
-        @if ($article->likedBy(Auth::user())->count() > 0)
-          <a class="loved hide-text" data-remote="true" rel="nofollow" data-method="DELETE" href="/likes/{{ $article->likedBy(Auth::user())->firstOrFail()->id }}">いいねを取り消す</a>
-        @else
-          <a class="love  hide-text" data-remote="true" rel="nofollow" data-method="POST" href="/articles/{{ $article->id }}/likes">いいね</a>
-        @endif
-      </div>
+    <div class="card-body pt-1 pb-2 pl-2">
+    <div class="row">
+      <article-like
+        :initial-is-liked-by='@json($article->isLikedBy(Auth::user()))'
+        :initial-count-likes='@json($article->count_likes)'
+        :authorized='@json(Auth::check())'
+        endpoint="{{ route('articles.like', ['article' => $article]) }}"
+      >
+      </article-like>
     </div>
+  </div>
+  
   </div>
 </div>

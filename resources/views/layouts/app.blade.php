@@ -9,9 +9,6 @@
 
     <title>{{ config('app.name', 'JINTODO') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -29,17 +26,17 @@
     @yield('css')
 </head>
 <body>
-    <div id="app">
         @include('nav')
         
         @include('flash_message')
 
         <main class="py-4">
+    <div id="app">
             @yield('content')
+    </div>
         </main>
         
         @include('footer')
-    </div>
     
   <script src="{{ mix('js/app.js') }}"></script>
   <!-- JQuery -->
