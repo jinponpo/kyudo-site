@@ -1,13 +1,13 @@
 <div class="card mt-3">
   <div class="card-body d-flex flex-row">
     <div>
-      <div class="font-weight-bold">
+      <div class="h5">
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
           {{ $article->user->name }}
+            <span class="font-weight-lighter h6 ml-2">
+              {{ $article->created_at->format('Y/m/d H:i') }}
+            </span> 
         </a>
-      </div> 
-      <div class="font-weight-lighter">
-        {{ $article->created_at->format('Y/m/d H:i') }}
       </div>
     </div>
     @if( Auth::id() === $article->user_id )
@@ -59,15 +59,17 @@
       @endif
     </div>
     <div class="card-body pt-0 pb-2">
-      <h3 class="h4 card-title">
+      <h4 class="card-title font-weight-bold">
         <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
           {{ $article->title }}
         </a>
-      </h3>
+      </h4>
     <div class="card-text">
-      {!! nl2br(e( $article->body )) !!}
+      <a class="text-dark font-weight-lighter" href="{{ route('articles.show', ['article' => $article]) }}">
+        {!! nl2br(e( $article->body )) !!}
+      </a>
     </div>
-    <div class="card-body pt-1 pb-2 pl-2">
+    <div class="card-body pt-1 pb-2 pl-3 h5">
     <div class="row">
       <article-like
         :initial-is-liked-by='@json($article->isLikedBy(Auth::user()))'
