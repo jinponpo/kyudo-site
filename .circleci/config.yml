@@ -37,9 +37,8 @@ jobs:
       - run:
           name: deploy
           command: |
-            ssh -o StrictHostKeyChecking=no -t ec2-user@${HOST_NAME} "cd /home && \
-              cd / && \
-              cd var/www/Laravel-Portfolio $$ \
+
+            ssh -o StrictHostKeyChecking=no -t webapp@${HOST_NAME} "cd laravel-ci && \
               git pull origin master && \
               composer install -n --no-dev --prefer-dist && \
               npm ci && \
