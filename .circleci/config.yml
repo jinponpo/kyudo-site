@@ -37,7 +37,7 @@ jobs:
       - run:
           name: deploy
           command: |
-            ssh -o StrictHostKeyChecking=no -t ec2-user@${HOST_NAME} "cd home && \
+            ssh -o StrictHostKeyChecking=no -t ec2-user@${HOST_NAME} "cd /home && \
               cd / && \
               cd var/www/Laravel-Portfolio $$ \
               git pull origin master && \
