@@ -18,7 +18,7 @@
         </h1>
 
         @if( Auth::id() == $user->id )
-        <a class="btn btn-outline-dark common-btn ml-auto mr-auto" href="/users/edit">プロフィールを編集</a>
+          <a href="{{ route('users.edit', ['name' => $user->name]) }}" class="btn btn-outline-dark common-btn ml-auto mr-auto" >プロフィールを編集</a>
         @endif
 
         @if( Auth::id() !== $user->id )

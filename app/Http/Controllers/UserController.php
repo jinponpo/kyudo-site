@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
+use Validator;
 
 class UserController extends Controller
 {
@@ -17,6 +19,39 @@ class UserController extends Controller
             'user' => $user,
             'articles' => $articles,
         ]);
+    }
+
+    public function edit(string $name)
+    {
+        $user = Auth::user('name', $name);
+            
+        return view('users.edit', [
+            'user' => $user
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $validator = Validator::make($request->all() , [
+            'user_name' => 'required|string|max:255',
+            'user_password' => 'required|string|min:6|confirmed',
+            ]);
+
+        if ($validator->fails())
+        {
+          return redirect()->back()->withErrors($validator->errors())->withInput();
+        }
+        
+        $user = User::find($request->id);
+        $user->name = $request->user_name;
+        if ($request->user_profile_photo !=null) {
+            $request->user_profile_photo->storeAs('public/user_images', $user->id . '.jpg');
+            $user->profile_photo = $user->id . '.jpg';
+        }
+        $user->password = bcrypt($request->user_password);
+        $user->save();
+
+        return redirect()->route('articles.index');
     }
 
     public function likes(string $name)
