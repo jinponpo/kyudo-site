@@ -39095,7 +39095,7 @@ var render = function() {
       { staticClass: "btn m-0 p-1 shadow-none", attrs: { type: "button" } },
       [
         _c("i", {
-          staticClass: "fas fa-heart",
+          staticClass: "fas fa-thumbs-up mr-1",
           class: {
             "red-text": this.isLikedBy,
             "animated heartBeat fast": this.gotToLike
@@ -51596,8 +51596,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jin/ci-portfolio/laravel-ci/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jin/ci-portfolio/laravel-ci/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
