@@ -49,6 +49,9 @@ class UserController extends Controller
             $user->profile_photo = $user->id . '.jpg';
         }
         $user->password = bcrypt($request->user_password);
+        if ($request->user_profile_photo !=null) {
+            $user->image = base64_encode(file_get_contents($request->user_profile_photo));
+        }
         $user->save();
 
         return redirect()->route('articles.index');

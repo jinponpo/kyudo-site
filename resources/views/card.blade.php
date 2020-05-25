@@ -11,8 +11,6 @@
       </div>
     </div>
     
-    
-    
     <div class="card-edit">
     @if( Auth::id() === $article->user_id )
         <div class="ml-auto card-text">

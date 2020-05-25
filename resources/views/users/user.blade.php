@@ -1,13 +1,13 @@
 <div class="mt40 mb40">
   <div class="row">
     <div class="col-md-4 text-center">
-        @if ($user->profile_photo)
-          <p>
-            <img class="round-img" src="{{ asset('storage/user_images/' . $user->profile_photo) }}"/>
-          </p>
-          @else
-            <img class="round-img" src="{{ asset('/images/blank_profile.png') }}"/>
-        @endif
+        @if ($user->image)
+        <p>
+          <img class="round-img" src="data:image/png;base64,{{ $user->image }}"/>
+        </p>
+        @else
+          <img class="round-img" src="{{ asset('/images/blank_profile.png') }}"/>
+      @endif
       </div>
       <div class="col-md-8">
       <div class="row">
