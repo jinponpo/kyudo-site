@@ -1,4 +1,4 @@
-<div class="card mt-3">
+<div class="card mt-3 relative">
   <div class="card-body d-flex flex-row">
     <div>
       <div class="h5">
@@ -10,6 +10,10 @@
         </a>
       </div>
     </div>
+    
+    
+    
+    <div class="card-edit">
     @if( Auth::id() === $article->user_id )
         <div class="ml-auto card-text">
           <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article]) }}">
@@ -45,6 +49,10 @@
         </div>
         <!-- modal -->
       @endif
+      </div>
+      
+      
+      
     </div>
     <div class="card-body pt-0 pb-2">
       <h4 class="card-title font-weight-bold">
