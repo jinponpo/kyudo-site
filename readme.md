@@ -3,7 +3,7 @@
 <li>PHP7.3,Laravel6.0</li>
 <li>MySQL5.7</li>
 <li>Vue.js 2.6.11,HTML/CSS,MDBootstrap</li>
-<li>AWS(EC2, RDS,Route53,ELB)</li>
+<li>AWS(EC2,S3,RDS,Route53,ELB,IAM,CodeDeploy)</li>
 <li>Docker/docker-compose</li>
 <li>CircleCI
 自動テスト(masterブランチ以外で起動)
