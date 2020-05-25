@@ -9,7 +9,7 @@
 自動テスト(masterブランチ以外で起動)
 自動デプロイ(masterブランチのみ起動)</li>
 <li>Google API</li>
-<li>Google　Maps API</li>
+<li>Google Maps API</li>
 <li>Twitter API</li>
 <li>Facebook API</li>
 </ul>
