@@ -37,10 +37,15 @@
   position: absolute;
   right: 5%;
 }
+.round-img{
+  border-radius:50%;
+  width: 120px;
+  height: 120px;
+}
+
 .nav-unshown {
 display:none;
 }
-
 @media screen and (max-width: 575.98px) {
 #nav-drawer {
 position: relative;
