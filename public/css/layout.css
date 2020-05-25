@@ -1,0 +1,111 @@
+.navbar {
+  background-color: #222831;
+  color: #fff;
+}
+.navbar-logo {
+  height: 60px;
+  margin-right: 15px;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+.main {
+  background-color: #393e46;
+  min-height: 85vh;
+  padding: 30px 5%;
+}
+.pagetitle {
+  color: #fff;
+  margin-bottom: 20px;
+}
+.footer {
+  background-color: #222831;
+  text-align: center;
+}
+.copyright {
+  color: #fff;
+}
+.pagination {
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.footer {
+  padding: 20px;
+}
+.card-edit{
+  position: absolute;
+  right: 5%;
+}
+.nav-unshown {
+display:none;
+}
+
+@media screen and (max-width: 575.98px) {
+#nav-drawer {
+position: relative;
+}
+
+#nav-open {
+display: inline-block;
+width: 30px;
+height: 22px;
+vertical-align: middle;
+}
+
+#nav-open span, #nav-open span:before, #nav-open span:after {
+position: absolute;
+height: 3px;
+width: 25px;
+border-radius: 3px;
+background: #555;
+display: block;
+content: '';
+cursor: pointer;
+}
+#nav-open span:before {
+bottom: -8px;
+}
+#nav-open span:after {
+bottom: -16px;
+}
+
+#nav-close {
+display: none;
+position: fixed;
+z-index: 2147483646;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: black;
+opacity: 0;
+transition: .3s ease-in-out;
+}
+
+#nav-content {
+overflow: auto;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 2147483647;
+width: 100%;
+max-width: 335px;
+height: 9%;
+background: #fff;
+transition: .3s ease-in-out;
+-webkit-transform: translateX(-105%);
+transform: translateX(-105%);
+}
+
+#nav-input:checked ~ #nav-close {
+display: block;
+opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+-webkit-transform: translateX(0%);
+transform: translateX(0%);
+box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+}
