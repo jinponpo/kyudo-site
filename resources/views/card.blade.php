@@ -11,26 +11,14 @@
       </div>
     </div>
     @if( Auth::id() === $article->user_id )
-      <!-- dropdown -->
         <div class="ml-auto card-text">
-          <div class="dropdown">
-            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <button type="button" class="btn btn-link text-muted m-0 p-2">
-                <i class="fas fa-ellipsis-v"></i>
-              </button>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article]) }}">
-                <i class="fas fa-pen mr-1"></i>投稿を更新する
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
-                <i class="fas fa-trash-alt mr-1"></i>投稿を削除する
-              </a>
-            </div>
-          </div>
+          <a class="dropdown-item" href="{{ route("articles.edit", ['article' => $article]) }}">
+            <i class="fas fa-pen mr-1"></i>投稿を更新する
+          </a>
+          <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
+            <i class="fas fa-trash-alt mr-1"></i>投稿を削除する
+          </a>
         </div>
-        <!-- dropdown -->
     
         <!-- modal -->
         <div id="modal-delete-{{ $article->id }}" class="modal fade" tabindex="-1" role="dialog">
