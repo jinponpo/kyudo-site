@@ -1,12 +1,15 @@
 <div class="card mt-3 relative">
-  <div class="card-body d-flex flex-row">
+  <div class="card-body d-flex">
     <div>
-      <div class="h5">
+      <div>
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
           {{ $article->user->name }}
-            <span class="font-weight-lighter h6 ml-2">
-              {{ $article->created_at->format('Y/m/d H:i') }}
-            </span> 
+        </a>
+      </div>
+      <div class="font-weight-lighter h6">
+        <a href="{{ route('users.show', ['name' => $article->user->name]) }}"
+        class="text-dark">
+          {{ $article->created_at->format('Y/m/d H:i') }}
         </a>
       </div>
     </div>
