@@ -9,16 +9,7 @@
           <input name="utf8" type="hidden" value="✓" />
           <input type="hidden" name="id" value="{{ $user->id }}" />
           {{csrf_field()}} 
-          <div class="form-group">
-            <label for="user_profile_photo">プロフィール写真</label><br>
-                @if ($user->image)
-                    <p>
-                      <img class="round-img" src="data:image/png;base64,{{ $user->image }}" alt="avatar" />
-                    </p>
-                @endif
-            <input type="file" name="user_profile_photo"  value="{{ old('user_profile_photo',$user->id) }}" accept="image/jpeg,image/gif,image/png" />
-          </div>
-
+          
           <div class="form-group">
             <label for="user_name">名前</label>
             <input autofocus="autofocus" class="form-control" type="text" value="{{ old('user_name',$user->name) }}" name="user_name" />
