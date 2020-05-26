@@ -16,8 +16,8 @@ class UserTableSeeder extends Seeder
         for ($i = 0; $i < 10; $i++)
         {
             DB::table('users')->insert([
-                'id' => $faker->unique()->numberBetween(1, 10),
-                'name' => $faker->unique()->username(),
+                'id' => $faker->unique()->numberBetween(101, 110),
+                'name' => $faker->unique()->name(),
                 'email' => $faker->unique()->safeEmail,
                 'created_at' => $faker->dateTime(),
             ]);

@@ -19,8 +19,8 @@ class ArticleTableSeeder extends Seeder
         {
             DB::table('articles')->insert([
                 'title' => '私の出身地',
-                'body' => $faker->country,
-                'user_id' => $faker->numberBetween(1, 10),
+                'body' => $faker->city,
+                'user_id' => $faker->numberBetween(101, 110),
                 'created_at' => $faker->dateTimeThisMonth(),
             ]);
         }
