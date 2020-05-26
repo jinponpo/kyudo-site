@@ -54,7 +54,7 @@ class UserController extends Controller
         }
         $user->save();
 
-        return redirect()->route('articles.index');
+        return redirect('/')->with('flash_message', 'プロフィールの更新が完了しました');
     }
 
     public function likes(string $name)
