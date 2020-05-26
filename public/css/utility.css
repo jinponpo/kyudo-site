@@ -101,6 +101,9 @@
 .mauto {
   margin: auto;
 }
+.text-align-center {
+  text-align: center;
+}
 
 /* padding */
 .p0 {
