@@ -39312,7 +39312,7 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "btn-sm shadow-none border border-primary p-2",
+        staticClass: "btn-sm shadow-none border border-primary p-3",
         class: _vm.buttonColor
       },
       [
