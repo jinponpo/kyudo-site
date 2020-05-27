@@ -1,5 +1,5 @@
-<div class="card mt-3 relative">
-  <div class="card-body d-flex">
+<div class="card mt-3">
+  <div class="card-body d-flex  relative">
     <div>
       <div>
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">

@@ -1,11 +1,16 @@
 <nav class="navbar navbar-expand bg-light" style="opacity: 0.8;">
  <div class="container">
-  <a class="navbar-brand h6 text-dark btn-border-bottom" href="{{ url('/') }}">
-    <img class='navbar-logo' src="{{ asset('images/logo.png') }}">
+  <a class="navbar-brand h6 text-dark btn-border-bottom mr5" href="{{ url('/') }}">
+    <!-- <img class='navbar-logo' src="{{ asset('images/logo.png') }}"> -->
     {{ config('app.name', 'JINTODO') }}
   </a>
+  <div class="navbar-brand h6 text-dark">
+    @auth
+      {{Auth::user()->name}}さん
+    @endauth
+  </div>
   <form method="GET" action="/">
-    <input type="text" name="keyword">
+    <input type="text" name="keyword" class="width80">
     <input type="submit" value="本文検索">
   </form>
   <div id="nav-drawer">
