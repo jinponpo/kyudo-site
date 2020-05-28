@@ -20,7 +20,7 @@ class ArticleController extends Controller
     {
         
         if($request->has('keyword')) {
-            $articles = Article::where('body', 'like', '%'.$request->get('keyword').'%')->paginate(5);
+            $articles = Article::where('body', 'like', '%'.$request->get('keyword').'%')->paginate(9);
         }
         else{
             $articles = Article::where('status', 1)->orderBy('created_at', 'DESC')->paginate(9);
@@ -44,7 +44,13 @@ class ArticleController extends Controller
     {
         $article->fill($request->all());
         $article->user_id = $request->user()->id;
+        if ($request->hasFile('image')) {
+            $filename = $request->file('image')->store('/public/images');
+            $article->image = basename($filename);
         $article->save();
+        } else {
+        $article->save();
+        }
 
         $request->tags->each(function ($tagName) use ($article) {
             $tag = Tag::firstOrCreate(['name' => $tagName]);

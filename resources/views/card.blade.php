@@ -1,6 +1,10 @@
 <div class="card mt-3">
   <div class="card-body">
-    <div class='image-wrapper'><img class='book-image' src="{{ asset('images/blank_profile.png') }}"></div>
+    @if(!empty($article->image))
+      <div class='image-wrapper'><img class='book-image' src="{{ asset('storage/images/'.$article->image) }}"></div>
+    @else
+      <div class='image-wrapper'><img class='book-image' src="{{ asset('images/blank_profile.png') }}"></div>
+    @endif
     <div>
       <div>
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
@@ -10,7 +14,7 @@
       <div class="font-weight-lighter h6">
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}"
         class="text-dark">
-          {{ $article->created_at->format('Y/m/d H:i') }}
+          {{ $article->created_at->format('Y/m/d') }}
         </a>
       </div>
     </div>
