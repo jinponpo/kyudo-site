@@ -23,7 +23,7 @@ class ArticleController extends Controller
             $articles = Article::where('body', 'like', '%'.$request->get('keyword').'%')->paginate(5);
         }
         else{
-            $articles = Article::where('status', 1)->orderBy('created_at', 'DESC')->paginate(5);
+            $articles = Article::where('status', 1)->orderBy('created_at', 'DESC')->paginate(9);
         }
 
         return view('articles/index', ['articles' => $articles]);

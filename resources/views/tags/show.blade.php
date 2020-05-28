@@ -2,14 +2,11 @@
 
 @section('content')
   <div class="container">
-    <div class="card mt-3">
-      <div class="card-body">
-        <h2 class="h4 card-title m-0">{{ $tag->hashtag }}</h2>
-        <div class="card-text text-right">
-          {{ $tag->articles->count() }}件
-        </div>
-      </div>
-    </div>
+    <h2 class="card-title m-0 text-center">タグ名 : {{ $tag->hashtag }} 
+      <span class="card-text">
+        {{ $tag->articles->count() }}件
+      </span>
+    </h2>
     @foreach($tag->articles as $article)
       @include('card')
     @endforeach

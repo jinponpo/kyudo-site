@@ -2,9 +2,13 @@
 
 @section('content')
   <div class="container">
+    <div class="row justify-content-center">
     @foreach($articles as $article)
-      @include('card')
+      <div class="col-md-4">
+        @include('card')
+      </div>
     @endforeach
+    </div>
     {{ $articles->appends(['keyword' => Request::get('keyword')])->links() }}
   </div>
 @endsection

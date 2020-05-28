@@ -45,9 +45,17 @@
 .card {
   position: unset;
 }
-
+.image-wrapper {
+  text-align: center;
+}
 .nav-unshown {
-display:none;
+  display:none;
+}
+.book-image {
+  width: 100%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  max-width: 640px;
 }
 @media screen and (max-width: 768px) {
   #nav-drawer {
@@ -118,73 +126,79 @@ display:none;
   }
 }
 @media screen and (max-width: 575.98px) {
-              #nav-drawer {
-              position: relative;
-              }
-              
-              #nav-open {
-              display: inline-block;
-              width: 30px;
-              height: 22px;
-              vertical-align: middle;
-              }
-              
-              #nav-open span, #nav-open span:before, #nav-open span:after {
-              position: absolute;
-              height: 3px;
-              width: 25px;
-              border-radius: 3px;
-              background: #555;
-              display: block;
-              content: '';
-              cursor: pointer;
-              }
-              #nav-open span:before {
-              bottom: -8px;
-              }
-              #nav-open span:after {
-              bottom: -16px;
-              }
-              
-              #nav-close {
-              display: none;
-              position: fixed;
-              z-index: 2147483646;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background: black;
-              opacity: 0;
-              transition: .3s ease-in-out;
-              }
-              
-              #nav-content {
-              overflow: auto;
-              position: fixed;
-              top: 0;
-              left: 0;
-              z-index: 2147483647;
-              width: 88.5%;
-              max-width: 335px;
-              height: 9%;
-              background: #fff;
-              transition: .3s ease-in-out;
-              -webkit-transform: translateX(-105%);
-              transform: translateX(-105%);
-              }
-              
-              #nav-input:checked ~ #nav-close {
-              display: block;
-              opacity: .5;
-              }
-              
-              #nav-input:checked ~ #nav-content {
-              -webkit-transform: translateX(0%);
-              transform: translateX(0%);
-              box-shadow: 6px 0 25px rgba(0,0,0,.15);
-              }
-              .width80 {
-                width:80%;
-              }
+  #nav-drawer {
+  position: relative;
+  }
+  
+  #nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+  }
+  
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #555;
+  display: block;
+  content: '';
+  cursor: pointer;
+  }
+  #nav-open span:before {
+  bottom: -8px;
+  }
+  #nav-open span:after {
+  bottom: -16px;
+  }
+  
+  #nav-close {
+  display: none;
+  position: fixed;
+  z-index: 2147483646;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+  }
+  
+  #nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  width: 88.5%;
+  max-width: 335px;
+  height: 9%;
+  background: #fff;
+  transition: .3s ease-in-out;
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);
+  }
+  
+  #nav-input:checked ~ #nav-close {
+  display: block;
+  opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+  .width80 {
+    width:80%;
+  }
+  .book-image {
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    max-width: 320px;
+  }
 }
