@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Tag;
+use Storage;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 
@@ -45,9 +46,11 @@ class ArticleController extends Controller
         $article->fill($request->all());
         $article->user_id = $request->user()->id;
         if ($request->hasFile('image')) {
-            $filename = $request->file('image')->store('/public/images');
-            $article->image = basename($filename);
-        $article->save();
+            $image = $request->file('image');
+            $path = Storage::disk('s3');
+            $path = $path->put('myprefix', $image, 'public');
+            $article->image = Storage::disk('s3')->url($path);
+            $article->save();
         } else {
         $article->save();
         }
