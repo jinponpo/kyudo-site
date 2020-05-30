@@ -1,4 +1,4 @@
-<div class="card mt-3">
+<div class="card">
   <div class="card-body">
     @if(!empty($article->image))
     <div class='image-wrapper'><img class='book-image' src="{{ $article->image }}"></div>
