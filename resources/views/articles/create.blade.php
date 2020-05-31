@@ -10,12 +10,12 @@
               <form method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="md-form">
-                  <label>タイトル</label>
+                  <label>道場名</label>
                   <input type="text" name="title" class="form-control" required value="{{ $article->title ?? old('title') }}">
                 </div>
                 <div class="form-group">
-                  <label>場所</label>
-                  <select type="text" name="pref" class="form-control" required value="{{ $article->pref ?? old('pref') }}">
+                  <label>都道府県</label>
+                  <select type="text" name="pref" required value="{{ $article->pref ?? old('pref') }}">
                     @foreach(config('pref') as $key => $score)
                       <option value="{{ $score }}">{{ $score }}</option>
                     @endforeach
@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group">
                   <label></label>
-                  <textarea name="body" required class="form-control" rows="16" placeholder="本文">{{ $article->body ?? old('body') }}</textarea>
+                  <textarea name="body" required class="form-control" rows="16" placeholder="特徴や使ってみての感想など">{{ $article->body ?? old('body') }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" value="投稿">投稿する</button>
               </form>

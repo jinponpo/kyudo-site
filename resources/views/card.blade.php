@@ -1,4 +1,4 @@
-<div class="card mt-3">
+<div class="card mt-5">
   <div class="card-body">
     @if(!empty($article->image))
     <div class='image-wrapper'>
@@ -28,7 +28,7 @@
     </div>
   </div>
   <div class="card-body pt-0 pb-2">
-    <h4 class="card-title font-weight-bold">
+    <h4 class="card-title font-weight-bold ">
       <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
         {{ $article->title }}
       </a>
@@ -36,7 +36,7 @@
     <div class="card-text text-dark">
       {{ $article->pref }}
     </div>
-  <div class="card-text">
+  <div class="card-text mt-3 mb-1">
     <a class="text-dark font-weight-lighter" href="{{ route('articles.show', ['article' => $article]) }}">
       {!! nl2br(e( $article->body )) !!}
     </a>
