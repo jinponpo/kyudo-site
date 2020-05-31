@@ -13,10 +13,10 @@ class UserTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create('ja_JP');
         
-        for ($i = 0; $i < 10; $i++)
+        for ($i = 0; $i < 5; $i++)
         {
             DB::table('users')->insert([
-                'id' => $faker->unique()->numberBetween(101, 110),
+                'id' => $faker->unique()->numberBetween(1001, 1005),
                 'name' => $faker->unique()->name(),
                 'email' => $faker->unique()->safeEmail,
                 'created_at' => $faker->dateTime(),

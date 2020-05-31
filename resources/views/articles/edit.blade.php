@@ -11,11 +11,11 @@
                 @method('PATCH')
                 @csrf
                 <div class="md-form">
-                  <label>タイトル</label>
+                  <label>道場名</label>
                   <input type="text" name="title" class="form-control" required value="{{ $article->title ?? old('title') }}">
                 </div>
                 <div class="form-group">
-                  <label>場所</label>
+                  <label>都道府県</label>
                   <select type="text" name="pref" required value="{{ $article->pref ?? old('pref') }}">
                     @foreach(config('pref') as $key => $score)
                       <option value="{{ $score }}">{{ $score }}</option>

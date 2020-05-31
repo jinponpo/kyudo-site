@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row justify-content-center">
     @foreach($articles as $article)
-      <div class="col-md-4">
+      <div class="col-xl-4 col-md-6">
         @include('card')
       </div>
     @endforeach

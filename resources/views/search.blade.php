@@ -11,7 +11,7 @@
         </form>
       </div>
     </li>
-    <li class="ml-5">
+    <li class="ml-3">
       <div>
         <p class="mb-3 mt-1">都道府県で検索</p>
         <form method="GET" action="/" class="">
