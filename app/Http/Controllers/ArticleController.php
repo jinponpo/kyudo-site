@@ -32,11 +32,13 @@ class ArticleController extends Controller
     
     public function create()
     {
+        $prefs = config('pref');
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
  
         return view('articles.create', [
+            'prefs' => $prefs,
             'allTagNames' => $allTagNames,
         ]);
     }
@@ -44,6 +46,7 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
+        $article->pref = $request->pref;
         $article->user_id = $request->user()->id;
         if ($request->hasFile('image')) {
             $image = $request->file('image');

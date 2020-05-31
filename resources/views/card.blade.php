@@ -33,6 +33,9 @@
         {{ $article->title }}
       </a>
     </h4>
+    <div class="card-text text-dark">
+      {{ $article->pref }}
+    </div>
   <div class="card-text">
     <a class="text-dark font-weight-lighter" href="{{ route('articles.show', ['article' => $article]) }}">
       {!! nl2br(e( $article->body )) !!}
