@@ -7,7 +7,19 @@
   </div>
   <div class="card mt-3">
     <div class="card-body">
-      <div class='image-wrapper'><img class='book-image' src="{{ asset('images/blank_profile.png') }}"></div>
+    @if(!empty($article->image))
+    <div class='image-wrapper'>
+      <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+        <img class='show-image' src="{{ $article->image }}">
+      </a>
+    </div>
+    @else
+      <div class='image-wrapper'>
+        <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+          <img class='show-image' src="{{ asset('images/blank_profile.png') }}">
+        </a>
+      </div>
+    @endif
       <div>
         <div>
           <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
@@ -72,6 +84,9 @@
             {{ $article->title }}
           </a>
         </h4>
+        <div class="card-text text-dark">
+          {{ $article->pref }}
+        </div>
       <div class="card-text">
         <a class="text-dark font-weight-lighter" href="{{ route('articles.show', ['article' => $article]) }}">
           {!! nl2br(e( $article->body )) !!}
@@ -104,7 +119,7 @@
     </div>
   </div>
 
-  <iframe id='map' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyBQCqrHT55gPe0VRd0x_WGbXl7PWFmObEE&amp;q={{ $article->body }}'
+  <iframe id='map' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyBQCqrHT55gPe0VRd0x_WGbXl7PWFmObEE&amp;q={{ $article->title }}'
     class='mt60' width='100%' height='480' frameborder='0'>
   </iframe>
 </div>

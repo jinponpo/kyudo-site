@@ -21,9 +21,10 @@ class ArticleController extends Controller
     {
         
         if($request->has('keyword')) {
-            $articles = Article::where('body', 'like', '%'.$request->get('keyword').'%')->paginate(9);
-        }
-        else{
+            $articles = Article::where('title', 'like', '%'.$request->get('keyword').'%')->paginate(9);
+        }  elseif($request->has('pref')) {
+            $articles = Article::where('pref', 'like', '%'.$request->get('pref').'%')->paginate(9);
+        }  else{
             $articles = Article::where('status', 1)->orderBy('created_at', 'DESC')->paginate(9);
         }
 
@@ -32,11 +33,13 @@ class ArticleController extends Controller
     
     public function create()
     {
+        $prefs = config('pref');
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
  
         return view('articles.create', [
+            'prefs' => $prefs,
             'allTagNames' => $allTagNames,
         ]);
     }
@@ -44,6 +47,7 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
+        $article->pref = $request->pref;
         $article->user_id = $request->user()->id;
         if ($request->hasFile('image')) {
             $image = $request->file('image');

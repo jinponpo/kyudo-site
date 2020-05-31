@@ -5,6 +5,12 @@
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
 }
+.search-nav {
+  height: 68px;
+}
+.pref-search {
+  height: 30px;
+}
 .main {
   background-color: #393e46;
   min-height: 85vh;
@@ -47,12 +53,22 @@
 .nav-unshown {
   display:none;
 }
-.book-image {
+.index-image {
   width: 100%;
   margin-bottom: 20px;
   object-fit: cover;
-  max-width: 640px;
+  max-width: 320px;
+  max-height: 320px;
 }
+.show-image {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  object-fit: contain;
+  max-height: 640px;
+}
+
+
 @media screen and (max-width: 768px) {
   #nav-drawer {
     position: relative;
@@ -121,6 +137,8 @@
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
 }
+
+
 @media screen and (max-width: 575.98px) {
   #nav-drawer {
   position: relative;
@@ -191,10 +209,17 @@
   .width80 {
     width:80%;
   }
-  .book-image {
+  .index-image {
     width: 100%;
     margin-bottom: 20px;
     object-fit: cover;
+    max-width: 200px;
+  }
+  .show-image {
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: fill;
     max-width: 320px;
+    max-height: 320px;
   }
 }

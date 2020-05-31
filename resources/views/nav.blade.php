@@ -6,13 +6,11 @@
   </a>
   <div class="navbar-brand h6 text-dark">
     @auth
+    <a href="{{ route('users.show', ['name' => Auth::user()->name]) }}" class="text-dark">
       {{Auth::user()->name}}さん
+    </a>
     @endauth
   </div>
-  <form method="GET" action="/">
-    <input type="text" name="keyword" class="width80">
-    <input type="submit" value="本文検索">
-  </form>
   <div id="nav-drawer">
     <input id="nav-input" type="checkbox" class="nav-unshown">
     <label id="nav-open" for="nav-input"><span></span></label>
