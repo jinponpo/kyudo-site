@@ -32,9 +32,6 @@
                 <div class="text-left mb20">
                   <a href="{{ route('password.request') }}" class="card-text">パスワードを忘れた方</a>
                 </div>
-                <div class="text-left">
-                  <a href='{{ route('login.guest') }}' class="btn btn-block btn-secondary mt-2 mb-2">簡単ログインはこちら</a>
-                </div>
                 <button class="btn btn-block btn-primary mt-2 mb-2" type="submit">ログイン</button>
               </form>
               <div class="mt-0">
@@ -42,6 +39,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="mt-5">
+          <a href='{{ route('login.guest') }}' class="btn btn-block btn-secondary mt-2 mb-2">簡単ログインはこちら</a>
         </div>
       </div>
     </div>

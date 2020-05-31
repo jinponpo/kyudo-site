@@ -36,9 +36,6 @@
                   <label for="password_confirmation">パスワード(確認)</label>
                   <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" required>
                 </div>
-                <div class="text-left">
-                  <a href='{{ route('login.guest') }}' class="btn btn-block btn-secondary mt-2 mb-2">簡単ログインはこちら</a>
-                </div>
                 <button class="btn btn-block btn-primary mt-2 mb-2" type="submit">ユーザー登録</button>
               </form>
               <div class="mt-0">
@@ -46,6 +43,9 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="mt-5">
+          <a href='{{ route('login.guest') }}' class="btn btn-block btn-secondary mt-2 mb-2">簡単ログインはこちら</a>
         </div>
       </div>
     </div>
