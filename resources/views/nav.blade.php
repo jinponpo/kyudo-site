@@ -11,10 +11,6 @@
     </a>
     @endauth
   </div>
-  <form method="GET" action="/">
-    <input type="text" name="keyword" class="width80">
-    <input type="submit" value="本文検索">
-  </form>
   <div id="nav-drawer">
     <input id="nav-input" type="checkbox" class="nav-unshown">
     <label id="nav-open" for="nav-input"><span></span></label>

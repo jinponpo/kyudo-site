@@ -5,6 +5,12 @@
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
 }
+.search-nav {
+  height: 68px;
+}
+.pref-search {
+  height: 30px;
+}
 .main {
   background-color: #393e46;
   min-height: 85vh;
@@ -48,10 +54,11 @@
   display:none;
 }
 .index-image {
-  width: 300px;
-  height: 300px;
+  width: 100%;
   margin-bottom: 20px;
   object-fit: cover;
+  max-width: 320px;
+  max-height: 320px;
 }
 .show-image {
   width: 100%;
@@ -206,7 +213,7 @@
     width: 100%;
     margin-bottom: 20px;
     object-fit: cover;
-    max-width: 320px;
+    max-width: 200px;
   }
   .show-image {
     width: 100%;

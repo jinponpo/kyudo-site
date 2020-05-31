@@ -21,9 +21,10 @@ class ArticleController extends Controller
     {
         
         if($request->has('keyword')) {
-            $articles = Article::where('body', 'like', '%'.$request->get('keyword').'%')->paginate(9);
-        }
-        else{
+            $articles = Article::where('title', 'like', '%'.$request->get('keyword').'%')->paginate(9);
+        }  elseif($request->has('pref')) {
+            $articles = Article::where('pref', 'like', '%'.$request->get('pref').'%')->paginate(9);
+        }  else{
             $articles = Article::where('status', 1)->orderBy('created_at', 'DESC')->paginate(9);
         }
 
