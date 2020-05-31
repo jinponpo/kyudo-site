@@ -1,9 +1,17 @@
 <div class="card mt-3">
   <div class="card-body">
     @if(!empty($article->image))
-    <div class='image-wrapper'><img class='book-image' src="{{ $article->image }}"></div>
+    <div class='image-wrapper'>
+      <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+        <img class='index-image' src="{{ $article->image }}">
+      </a>
+    </div>
     @else
-      <div class='image-wrapper'><img class='book-image' src="{{ asset('images/blank_profile.png') }}"></div>
+      <div class='image-wrapper'>
+        <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+          <img class='index-image' src="{{ asset('images/blank_profile.png') }}">
+        </a>
+      </div>
     @endif
     <div>
       <div>

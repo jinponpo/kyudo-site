@@ -7,7 +7,19 @@
   </div>
   <div class="card mt-3">
     <div class="card-body">
-      <div class='image-wrapper'><img class='book-image' src="{{ asset('images/blank_profile.png') }}"></div>
+    @if(!empty($article->image))
+    <div class='image-wrapper'>
+      <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+        <img class='show-image' src="{{ $article->image }}">
+      </a>
+    </div>
+    @else
+      <div class='image-wrapper'>
+        <a class="text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+          <img class='show-image' src="{{ asset('images/blank_profile.png') }}">
+        </a>
+      </div>
+    @endif
       <div>
         <div>
           <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">

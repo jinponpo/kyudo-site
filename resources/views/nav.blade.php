@@ -6,7 +6,9 @@
   </a>
   <div class="navbar-brand h6 text-dark">
     @auth
+    <a href="{{ route('users.show', ['name' => Auth::user()->name]) }}" class="text-dark">
       {{Auth::user()->name}}さん
+    </a>
     @endauth
   </div>
   <form method="GET" action="/">
