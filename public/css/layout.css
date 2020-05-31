@@ -6,7 +6,7 @@
   color: #fff;
 }
 .search-nav {
-  height: 68px;
+  height: 110px;
 }
 .pref-search {
   height: 30px;
@@ -55,6 +55,7 @@
 }
 .index-image {
   width: 100%;
+  height: 80%;
   margin-bottom: 20px;
   object-fit: cover;
   max-width: 320px;
