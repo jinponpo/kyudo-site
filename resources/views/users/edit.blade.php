@@ -8,7 +8,7 @@
         <form method="POST" enctype="multipart/form-data" action="{{ route('users.update') }}" accept-charset="UTF-8" >
           <input name="utf8" type="hidden" value="✓" />
           <input type="hidden" name="id" value="{{ $user->id }}" />
-          {{csrf_field()}} 
+          {{csrf_field()}}
           
           <div class="form-group">
             <label for="user_name">名前</label>
@@ -21,13 +21,8 @@
           </div>
 
           <div class="form-group">
-            <label for="user_password">パスワード</label>
-            <input autofocus="autofocus" class="form-control" type="password" value="" name="user_password" />
-          </div>
-
-          <div class="form-group">
-            <label for="user_password_confirmation">パスワードの確認</label>
-            <input autofocus="autofocus" class="form-control" type="password" name="user_password_confirmation" />
+            <label for="file1">写真を投稿</label>
+            <input type="file" id="file1" name='image' class="form-control-file">
           </div>
 
           <input type="submit" name="commit" value="変更する" class="btn btn-primary" data-disable-with="変更する" />

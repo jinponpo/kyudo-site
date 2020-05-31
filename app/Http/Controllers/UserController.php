@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use Storage;
 use Validator;
 
 class UserController extends Controller
@@ -34,7 +35,6 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all() , [
             'user_name' => 'required|string|max:255',
-            'user_password' => 'required|string|min:6|confirmed',
             ]);
 
         if ($validator->fails())
@@ -44,15 +44,15 @@ class UserController extends Controller
         
         $user = User::find($request->id);
         $user->name = $request->user_name;
-        if ($request->user_profile_photo !=null) {
-            $request->user_profile_photo->storeAs('public/user_images', $user->id . '.jpg');
-            $user->profile_photo = $user->id . '.jpg';
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $path = Storage::disk('s3');
+            $path = $path->put('myprefix', $image, 'public');
+            $user->image = Storage::disk('s3')->url($path);
+            $user->save();
+        } else {
+            $user->save();
         }
-        $user->password = bcrypt($request->user_password);
-        if ($request->user_profile_photo !=null) {
-            $user->image = base64_encode(file_get_contents($request->user_profile_photo));
-        }
-        $user->save();
 
         return redirect('/')->with('flash_message', 'プロフィールの更新が完了しました');
     }
