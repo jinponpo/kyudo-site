@@ -47,7 +47,6 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
-        $article->pref = $request->pref;
         $article->user_id = $request->user()->id;
         if ($request->hasFile('image')) {
             $image = $request->file('image');

@@ -15,7 +15,7 @@
                 </div>
                 <div class="form-group">
                   <label>場所</label>
-                  <select type="text" name="pref" class="form-control" required value="{{ $article->pref ?? old('pref') }}">
+                  <select type="text" name="pref" required value="{{ $article->pref ?? old('pref') }}">
                     @foreach(config('pref') as $key => $score)
                       <option value="{{ $score }}">{{ $score }}</option>
                     @endforeach
