@@ -4,12 +4,10 @@
       @if(!empty($user->image))
       <div class='image-wrapper'>
           <img class='round-img' src="{{ $user->image }}">
-        </a>
       </div>
       @else
         <div class='image-wrapper'>
             <img class='round-img' src="{{ asset('images/blank_profile.png') }}">
-          </a>
         </div>
       @endif
       </div>
