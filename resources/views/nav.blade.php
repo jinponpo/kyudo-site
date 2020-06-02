@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand bg-light" style="opacity: 0.8;">
  <div class="container">
   <a class="navbar-brand h6 text-dark btn-border-bottom mr5" href="{{ url('/') }}">
-    <!-- <img class='navbar-logo' src="{{ asset('images/logo.png') }}"> -->
-    {{ config('app.name', 'JINTODO') }}
+    {{ config('app.name', 'KYUDO DB') }}
   </a>
   <div class="navbar-brand h6 text-dark">
     @auth

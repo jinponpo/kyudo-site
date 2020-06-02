@@ -119,6 +119,43 @@
     </div>
   </div>
 
+  <div>
+    <h3 class="mt-3">
+      コメント一覧
+    </h3>
+    @auth
+    <div class="row actions mb-3">
+      <form class="w-100" action="/articles/{comment_id}/comments" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓" />
+        {{csrf_field()}} 
+        <input value="" type="hidden" name="user_id" />
+        <input value="{{ $article->id }}" type="hidden" name="article_id" />
+        <input class="form-control comment-input border-0" placeholder="コメント ..." autocomplete="off" type="text" name="comment" />
+      </form>
+    </div>
+    @endauth
+    
+  @foreach ($article->comments as $comment) 
+    <div class="mb-2">
+      @auth
+      @if ($comment->user->id == Auth::user()->id)
+        <a class="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/{{ $comment->id }}"></a>
+      @endif
+      @endauth
+      <span>
+        <strong>
+          {{ $comment->user->name }}
+        </strong>
+      </span>
+      <span>{{ $comment->comment }}</span>
+    </div>
+    <div class="text-dark">
+      {{    $article->created_at->format('Y/m/d') }}
+    </div>
+    <hr>
+  @endforeach
+  </div>
+
+
   <iframe id='map' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyBQCqrHT55gPe0VRd0x_WGbXl7PWFmObEE&amp;q={{ $article->title }}'
     class='mt60' width='100%' height='480' frameborder='0'>
   </iframe>

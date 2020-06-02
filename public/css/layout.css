@@ -71,6 +71,15 @@
   object-fit: contain;
   max-height: 640px;
 }
+.delete-comment {
+  background-image: url("/images/parts8.png");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  float: right;
+  margin: 5px 0 0 10px;
+  background-size: 11px !important;
+}
 @media screen and (max-width: 995px) {
   .index-image {
     width: 280px;
