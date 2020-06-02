@@ -41,3 +41,5 @@ Route::prefix('articles')->name('articles.')->group(function () {
     Route::delete('/{article}/like', 'ArticleController@unlike')->name('unlike')->middleware('auth');
 });
 Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
+Route::post('/articles/{comment_id}/comments','CommentsController@store');
+Route::get('/comments/{comment_id}', 'CommentsController@destroy');

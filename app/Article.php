@@ -40,4 +40,9 @@ class Article extends Model
     {
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
+
+    public function comments()
+  {
+    return $this->hasMany('App\Comment');
+  }
 }
