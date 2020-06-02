@@ -14,16 +14,23 @@
       </div>
     @endif
     <div>
-      <div>
+      <div style="display: inline-block;">
+      @if(!empty($article->user->image))
+          <img class='index-round-img' src="{{ $article->user->image }}">
+      @else
+            <img class='index-round-img' src="{{ asset('images/blank_profile.png') }}">
+      @endif
+      </div>
+      <div style="display: inline-block;" class="ml-3">
         <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
           {{ $article->user->name }}
         </a>
-      </div>
-      <div class="font-weight-lighter h6">
-        <a href="{{ route('users.show', ['name' => $article->user->name]) }}"
-        class="text-dark">
-          {{ $article->created_at->format('Y/m/d') }}
-        </a>
+        <div class="font-weight-lighter h6">
+          <a href="{{ route('users.show', ['name' => $article->user->name]) }}"
+            class="text-dark">
+            {{ $article->created_at->format('Y/m/d') }}
+          </a>
+        </div>
       </div>
     </div>
   </div>

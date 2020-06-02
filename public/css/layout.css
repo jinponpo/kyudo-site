@@ -44,6 +44,11 @@
   width: 120px;
   height: 120px;
 }
+.index-round-img{
+  border-radius:50%;
+  width: 80px;
+  height: 80px;
+}
 .card {
   position: unset;
 }
@@ -144,8 +149,8 @@
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
   }
   .index-image {
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
     margin-bottom: 20px;
     object-fit: cover;
   }
@@ -223,8 +228,8 @@
     width:80%;
   }
   .index-image {
-    width: 450px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     margin-bottom: 20px;
     object-fit: cover;
   }
@@ -234,5 +239,16 @@
     object-fit: fill;
     max-width: 320px;
     max-height: 320px;
+  }
+  @media screen and (max-width: 410px){
+    .index-image {
+      width: 250px;
+      height: 250px;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+    .search-p {
+      font-size: 13px;
+    }
   }
 }
