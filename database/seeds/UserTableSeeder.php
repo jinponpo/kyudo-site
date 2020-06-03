@@ -19,6 +19,7 @@ class UserTableSeeder extends Seeder
                 'id' => $faker->unique()->numberBetween(1001, 1005),
                 'name' => $faker->unique()->name(),
                 'email' => $faker->unique()->safeEmail,
+                'image' => "http://localhost/images/free1.jpeg",
                 'created_at' => $faker->dateTime(),
             ]);
         }
